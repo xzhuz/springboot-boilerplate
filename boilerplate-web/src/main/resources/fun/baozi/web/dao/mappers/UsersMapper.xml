@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--suppress ALL -->
+<mapper namespace="fun.baozi.web.dao.mappers.UsersMapper">
+    <resultMap id="BaseResultMap" type="fun.baozi.web.dao.entity.Users">
+        <!--
+          WARNING - @mbg.generated
+        -->
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
+        <result column="deleted" jdbcType="TINYINT" property="deleted"/>
+        <result column="update_time" jdbcType="TIMESTAMP" property="updateTime"/>
+        <result column="avatar" jdbcType="VARCHAR" property="avatar"/>
+        <result column="description" jdbcType="VARCHAR" property="description"/>
+        <result column="email" jdbcType="VARCHAR" property="email"/>
+        <result column="expire_time" jdbcType="TIMESTAMP" property="expireTime"/>
+        <result column="nickname" jdbcType="VARCHAR" property="nickname"/>
+        <result column="password" jdbcType="VARCHAR" property="password"/>
+        <result column="username" jdbcType="VARCHAR" property="username"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        <!--
+          WARNING - @mbg.generated
+        -->
+        id, create_time, deleted, update_time, avatar, description, email, expire_time, nickname,
+        password, username
+    </sql>
+
+    <sql id="listCondition">
+        <where>
+            <if test="username != null and username != ''">
+                AND username LIKE CANCAT('%', #{username}, '%')
+            </if>
+            <if test="email != null and email != ''">
+                AND email = #{email}
+            </if>
+            <if test="nickname != null and nickname != ''">
+                AND nickname = #{nickname}
+            </if>
+            <if test="startExpireTime != null and startExpireTime != ''">
+                AND expire_time &gt;= #{startExpireTime}
+            </if>
+            <if test="endExpireTime != null and endExpireTime != ''">
+                AND expire_time &lt;= #{endExpireTime}
+            </if>
+            <if test="startCreateTime != null and startCreateTime != ''">
+                AND create_time &gt;= #{startCreateTime}
+            </if>
+            <if test="endCreateTime != null and endCreateTime != ''">
+                AND create_time &lt;= #{endCreateTime}
+            </if>
+            <if test="startUpdateTime != null and startUpdateTime != ''">
+                AND update_time &gt;= #{startUpdateTime}
+            </if>
+            <if test="endUpdateTime != null and endUpdateTime != ''">
+                AND update_time &lt;= #{endUpdateTime}
+            </if>
+        </where>
+    </sql>
+
+    <select id="listUser" resultType="fun.baozi.web.dao.dto.UserListDto">
+        SELECT id, username, email, avatar, nickname, description, expire_time, create_time, update_time
+        FROM users
+        <include refid="listCondition"/>
+        ORDER BY create_time DESC
+    </select>
+
+    <select id="countUser" resultType="java.lang.Long">
+        SELECT COUNT(id)
+        FROM users
+        <include refid="listCondition"/>
+    </select>
+
+    <select id="getUserByUsername" resultMap="BaseResultMap">
+        SELECT id, create_time, deleted, update_time, avatar, description, email, expire_time, nickname,username
+        FROM users
+        WHERE username = #{username}
+        LIMIT 1
+    </select>
+
+    <delete id="deleteByUsername">
+        DELETE FROM users WHERE username = #{username}
+    </delete>
+</mapper>
