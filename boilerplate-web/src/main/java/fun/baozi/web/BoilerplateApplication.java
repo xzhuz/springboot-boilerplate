@@ -10,10 +10,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  */
 @SpringBootApplication
 @MapperScan(basePackages = "fun.baozi.web.dao.mappers")
-public class BoilerplateWebApplication {
+public class BoilerplateApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(BoilerplateWebApplication.class, args);
+        SpringApplication.run(BoilerplateApplication.class, args);
     }
 
 }
