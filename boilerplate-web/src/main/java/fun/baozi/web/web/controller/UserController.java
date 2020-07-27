@@ -4,9 +4,9 @@ import com.google.common.collect.Lists;
 import fun.baozi.core.domain.enums.DateFormatEnum;
 import fun.baozi.core.domain.page.PageBean;
 import fun.baozi.core.domain.page.PageResult;
-import fun.baozi.core.utils.date.DateHelper;
-import fun.baozi.web.domain.req.UserList;
-import fun.baozi.web.domain.req.UserRegister;
+import fun.baozi.core.utils.date.DateUtils;
+import fun.baozi.web.domain.modals.UserList;
+import fun.baozi.web.domain.modals.UserRegister;
 import fun.baozi.web.service.UserService;
 import fun.baozi.web.web.req.ListUserRq;
 import fun.baozi.web.web.req.RegisterUserRq;
@@ -68,8 +68,8 @@ public class UserController {
      */
     private String getFormatTime(Long timestamp) {
         if (Objects.nonNull(timestamp) && timestamp > 0) {
-            Date dateTime = DateHelper.stampToDate(timestamp);
-            return DateHelper.format(dateTime, DateFormatEnum.EXPLICIT_DATE);
+            Date dateTime = DateUtils.stampToDate(timestamp);
+            return DateUtils.format(dateTime, DateFormatEnum.EXPLICIT_DATE);
         }
         return Strings.EMPTY;
     }

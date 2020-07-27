@@ -1,4 +1,6 @@
-package fun.baozi.core.domain;
+package fun.baozi.core.domain.result;
+
+import fun.baozi.core.exception.ErrorCode;
 
 /**
  * Global response entity
@@ -10,7 +12,7 @@ public class Result<T> {
     /**
      * Response code
      */
-    private String code;
+    private Integer code;
     /**
      * Response data detail
      */
@@ -21,11 +23,11 @@ public class Result<T> {
     private String msg;
 
 
-    public String getCode() {
+    public Integer getCode() {
         return code;
     }
 
-    public void setCode(String code) {
+    public void setCode(Integer code) {
         this.code = code;
     }
 
@@ -43,5 +45,10 @@ public class Result<T> {
 
     public void setMsg(String msg) {
         this.msg = msg;
+    }
+
+    public Result(ErrorCode errorCode) {
+        this.code = errorCode.getCode();
+        this.msg = errorCode.getMsg();
     }
 }

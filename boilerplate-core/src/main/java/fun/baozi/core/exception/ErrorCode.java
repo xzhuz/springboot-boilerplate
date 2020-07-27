@@ -11,7 +11,7 @@ public interface ErrorCode {
      * get error code
      * @return error code
      */
-    String getCode();
+    Integer getCode();
 
     /**
      * get error message

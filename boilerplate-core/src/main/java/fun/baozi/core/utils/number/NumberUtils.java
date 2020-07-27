@@ -5,7 +5,7 @@ package fun.baozi.core.utils.number;
  * @author baozi
  * 2020-07-03
  */
-public class NumberHelper {
+public class NumberUtils {
 
     /**
      * Check if a string is number or not

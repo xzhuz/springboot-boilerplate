@@ -1,6 +1,7 @@
 package fun.baozi.web.core.response;
 
-import fun.baozi.core.domain.Result;
+import fun.baozi.core.domain.result.Result;
+import fun.baozi.core.domain.enums.ResultCode;
 import org.springframework.core.MethodParameter;
 import org.springframework.web.context.request.NativeWebRequest;
 import org.springframework.web.method.support.HandlerMethodReturnValueHandler;
@@ -26,10 +27,10 @@ public class MethodReturnValueHandler implements HandlerMethodReturnValueHandler
 
     @Override
     public void handleReturnValue(Object o, MethodParameter methodParameter, ModelAndViewContainer modelAndViewContainer, NativeWebRequest nativeWebRequest) throws Exception {
-        Result result = new Result();
-        result.setCode("200");
+        Result<Object> result = new Result<>();
+        result.setCode(ResultCode.SUCCESS.getCode());
+        result.setMsg(ResultCode.SUCCESS.getMsg());
         result.setData(o);
-        result.setMsg("");
         proxyObject.handleReturnValue(result, methodParameter,modelAndViewContainer, nativeWebRequest);
     }
 }

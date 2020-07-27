@@ -3,13 +3,13 @@ package fun.baozi.web.service.impl;
 import com.github.pagehelper.PageHelper;
 import com.google.common.collect.Lists;
 import fun.baozi.core.domain.page.PageBean;
-import fun.baozi.core.utils.encrypt.Md5Encryptor;
+import fun.baozi.core.utils.encrypt.EncryptUtils;
 import fun.baozi.web.dao.dto.UserListDto;
 import fun.baozi.web.dao.entity.Users;
 import fun.baozi.web.dao.mappers.UsersMapper;
 import fun.baozi.web.domain.enums.UserDeletedEnum;
-import fun.baozi.web.domain.req.UserList;
-import fun.baozi.web.domain.req.UserRegister;
+import fun.baozi.web.domain.modals.UserList;
+import fun.baozi.web.domain.modals.UserRegister;
 import fun.baozi.web.service.UserService;
 import fun.baozi.web.web.res.ListUserRs;
 import fun.baozi.web.web.res.RegisterUserRs;
@@ -52,7 +52,7 @@ public class UserServiceImpl implements UserService {
         String nickname = Strings.isBlank(req.getNickname()) ? req.getUsername() : req.getNickname();
         user.setNickname(nickname);
         // The password needs to be encrypted
-        String password = Md5Encryptor.md5(req.getPassword());
+        String password = EncryptUtils.md5(req.getPassword());
         user.setPassword(password);
         user.setUsername(req.getUsername());
         // Register

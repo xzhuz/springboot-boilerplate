@@ -5,7 +5,7 @@ package fun.baozi.core.exception;
  * @author baozi
  * 2020-07-03
  */
-public class BaseException extends RuntimeException {
+public class AppException extends RuntimeException {
 
     /**
      * error code enumeration
@@ -26,18 +26,18 @@ public class BaseException extends RuntimeException {
     }
 
 
-    public BaseException(ErrorCode errorCode, Exception exception) {
+    public AppException(ErrorCode errorCode, Exception exception) {
         this.errorCode = errorCode;
         this.exception = exception;
     }
 
-    public BaseException(ErrorCode errorCode) {
+    public AppException(ErrorCode errorCode) {
         this.errorCode = errorCode;
         this.exception = new Exception(errorCode.getMsg());
     }
 
 
-    public BaseException(ErrorCode errorCode, String msg) {
+    public AppException(ErrorCode errorCode, String msg) {
         this.errorCode = errorCode;
         this.exception = new Exception(msg);
     }

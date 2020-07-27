@@ -1,6 +1,6 @@
 package fun.baozi.web.web.req;
 
-import fun.baozi.web.domain.req.UserInfo;
+import fun.baozi.web.domain.modals.UserInfo;
 import lombok.Data;
 
 /**
@@ -27,7 +27,7 @@ public class RegisterUserRq extends UserInfo {
 
     /**
      * User avatar
-     * Avatar image url
+     * image url
      */
     private String avatar;
 

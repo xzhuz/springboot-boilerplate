@@ -1,8 +1,8 @@
 package fun.baozi.core.utils.date;
 
 import fun.baozi.core.domain.enums.DateFormatEnum;
-import fun.baozi.core.exception.BaseErrorCode;
-import fun.baozi.core.exception.BaseException;
+import fun.baozi.core.exception.AppErrorCode;
+import fun.baozi.core.exception.AppException;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -14,7 +14,7 @@ import java.util.Objects;
  * @author baozi
  * 2020-07-07
  */
-public class DateHelper {
+public class DateUtils {
 
     /**
      * Calculate the date plus the specified number of days
@@ -76,7 +76,7 @@ public class DateHelper {
             SimpleDateFormat formatter = new SimpleDateFormat(format.getFormat());
             return formatter.format(date);
         } catch (Exception e) {
-            throw new BaseException(BaseErrorCode.PARSE_DATE_ERROR);
+            throw new AppException(AppErrorCode.PARSE_DATE_ERROR);
         }
     }
 
@@ -94,7 +94,7 @@ public class DateHelper {
             calendar.setTimeInMillis(timestamp);
             return calendar.getTime();
         } catch (Exception e) {
-            throw new BaseException(BaseErrorCode.PARSE_DATE_ERROR);
+            throw new AppException(AppErrorCode.PARSE_DATE_ERROR);
         }
     }
 
