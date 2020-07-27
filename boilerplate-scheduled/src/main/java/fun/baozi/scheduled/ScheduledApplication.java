@@ -1,19 +1,17 @@
-package fun.baozi.web;
+package fun.baozi.scheduled;
 
-import tk.mybatis.spring.annotation.MapperScan;
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.scheduling.annotation.EnableScheduling;
 
-/**
- * @author baozi
- * 2020-07-02
- */
 @SpringBootApplication(scanBasePackages = {"fun.baozi"})
 @MapperScan(basePackages = {"fun.baozi.data.dao.mappers"})
-public class BoilerplateApplication {
+@EnableScheduling
+public class ScheduledApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(BoilerplateApplication.class, args);
+        SpringApplication.run(ScheduledApplication.class, args);
     }
 
 }

@@ -1,4 +1,4 @@
-package fun.baozi.web.dao.entity;
+package fun.baozi.data.dao.entity;
 
 import javax.persistence.Column;
 import javax.persistence.GeneratedValue;

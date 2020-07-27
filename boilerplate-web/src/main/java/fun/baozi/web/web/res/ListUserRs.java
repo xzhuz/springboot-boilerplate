@@ -12,6 +12,11 @@ import java.util.Date;
 public class ListUserRs {
 
     /**
+     * User id
+     */
+    private Integer userId;
+
+    /**
      * User name.
      * Max length 10 character
      */

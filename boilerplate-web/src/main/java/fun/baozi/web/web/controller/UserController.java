@@ -5,7 +5,7 @@ import fun.baozi.core.domain.enums.DateFormatEnum;
 import fun.baozi.core.domain.page.PageBean;
 import fun.baozi.core.domain.page.PageResult;
 import fun.baozi.core.utils.date.DateUtils;
-import fun.baozi.web.domain.modals.UserList;
+import fun.baozi.data.domain.UserList;
 import fun.baozi.web.domain.modals.UserRegister;
 import fun.baozi.web.service.UserService;
 import fun.baozi.web.web.req.ListUserRq;

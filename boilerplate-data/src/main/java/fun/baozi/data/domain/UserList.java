@@ -1,4 +1,4 @@
-package fun.baozi.web.domain.modals;
+package fun.baozi.data.domain;
 
 import fun.baozi.core.domain.page.PageInfo;
 import lombok.Data;

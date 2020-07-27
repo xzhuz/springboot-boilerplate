@@ -51,4 +51,6 @@ public class Result<T> {
         this.code = errorCode.getCode();
         this.msg = errorCode.getMsg();
     }
+
+    public Result(){}
 }

@@ -4,11 +4,11 @@ import com.github.pagehelper.PageHelper;
 import com.google.common.collect.Lists;
 import fun.baozi.core.domain.page.PageBean;
 import fun.baozi.core.utils.encrypt.EncryptUtils;
-import fun.baozi.web.dao.dto.UserListDto;
-import fun.baozi.web.dao.entity.Users;
-import fun.baozi.web.dao.mappers.UsersMapper;
+import fun.baozi.data.dao.dto.UserListDto;
+import fun.baozi.data.dao.entity.Users;
+import fun.baozi.data.dao.mappers.UsersMapper;
+import fun.baozi.data.domain.UserList;
 import fun.baozi.web.domain.enums.UserDeletedEnum;
-import fun.baozi.web.domain.modals.UserList;
 import fun.baozi.web.domain.modals.UserRegister;
 import fun.baozi.web.service.UserService;
 import fun.baozi.web.web.res.ListUserRs;
@@ -100,6 +100,7 @@ public class UserServiceImpl implements UserService {
      */
     private ListUserRs assembleUserRs(UserListDto u) {
         ListUserRs rs = new ListUserRs();
+        rs.setUserId(u.getId());
         rs.setUsername(u.getUsername());
         rs.setEmail(u.getEmail());
         rs.setAvatar(u.getAvatar());
