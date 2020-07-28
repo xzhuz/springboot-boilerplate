@@ -19,10 +19,10 @@
         </plugin>
 
         <!-- 自定义注释生成器 -->
-<!--        <commentGenerator type="fun.baozi.miaosha.util.MySQLCommentGenerator">-->
-<!--            <property name="author" value="baozi"/>-->
-<!--            <property name="dateFormat" value="yyyy/MM/dd"/>-->
-<!--        </commentGenerator>-->
+        <commentGenerator type="fun.baozi.mybatis.DefaultCommentGenerator">
+            <property name="author" value="${comment.author}"/>
+            <property name="dateFormat" value="${comment.date.format}"/>
+        </commentGenerator>
 
         <jdbcConnection driverClass="${jdbc.driverClass}"
                         connectionURL="${jdbc.url}"
