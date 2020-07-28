@@ -6,6 +6,7 @@ package fun.baozi.web.domain.enums;
  * 2020-07-15
  */
 public enum UserDeletedEnum {
+    // not deleted
     NORMAL((byte)0),
     DELETED((byte)1),
     ;
