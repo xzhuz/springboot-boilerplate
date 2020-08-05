@@ -1,8 +1,8 @@
-package fun.baozi.data.dao.mappers;
+package fun.baozi.web.data.dao.mappers;
 
-import fun.baozi.data.dao.dto.UserListDto;
-import fun.baozi.data.dao.entity.Users;
-import fun.baozi.data.domain.UserList;
+import fun.baozi.web.data.dao.dto.UserListDto;
+import fun.baozi.web.data.dao.entity.Users;
+import fun.baozi.web.data.dto.UserList;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 import tk.mybatis.mapper.common.Mapper;

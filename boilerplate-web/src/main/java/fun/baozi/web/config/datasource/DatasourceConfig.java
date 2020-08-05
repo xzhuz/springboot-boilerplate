@@ -1,4 +1,4 @@
-package fun.baozi.data.config;
+package fun.baozi.web.config.datasource;
 
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;

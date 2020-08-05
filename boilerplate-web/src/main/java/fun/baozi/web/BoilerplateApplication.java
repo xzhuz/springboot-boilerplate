@@ -9,7 +9,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * 2020-07-02
  */
 @SpringBootApplication(scanBasePackages = {"fun.baozi"})
-@MapperScan(basePackages = {"fun.baozi.data.dao.mappers"})
+@MapperScan(basePackages = {"fun.baozi.web.data.dao.mappers"})
 public class BoilerplateApplication {
 
     public static void main(String[] args) {

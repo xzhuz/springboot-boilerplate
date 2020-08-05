@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <!--suppress ALL -->
-<mapper namespace="fun.baozi.web.dao.mappers.UsersMapper">
-    <resultMap id="BaseResultMap" type="fun.baozi.web.dao.entity.Users">
+<mapper namespace="fun.baozi.web.data.dao.mappers.UsersMapper">
+    <resultMap id="BaseResultMap" type="fun.baozi.web.data.dao.entity.Users">
         <!--
           WARNING - @mbg.generated
         -->
@@ -18,13 +18,6 @@
         <result column="password" jdbcType="VARCHAR" property="password"/>
         <result column="username" jdbcType="VARCHAR" property="username"/>
     </resultMap>
-    <sql id="Base_Column_List">
-        <!--
-          WARNING - @mbg.generated
-        -->
-        id, create_time, deleted, update_time, avatar, description, email, expire_time, nickname,
-        password, username
-    </sql>
 
     <sql id="listCondition">
         <where>
@@ -58,11 +51,11 @@
         </where>
     </sql>
 
-    <select id="listUser" resultType="fun.baozi.web.dao.dto.UserListDto">
+    <select id="listUser" resultType="fun.baozi.web.data.dao.dto.UserListDto">
         SELECT id, username, email, avatar, nickname, description, expire_time, create_time, update_time
         FROM users
         <include refid="listCondition"/>
-        ORDER BY create_time DESC
+        ORDER BY create_time DESC, id
     </select>
 
     <select id="countUser" resultType="java.lang.Long">

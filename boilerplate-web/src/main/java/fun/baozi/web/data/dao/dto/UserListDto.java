@@ -1,4 +1,4 @@
-package fun.baozi.data.dao.dto;
+package fun.baozi.web.data.dao.dto;
 
 import lombok.Data;
 

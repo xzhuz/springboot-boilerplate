@@ -1,7 +1,7 @@
 package fun.baozi.web.service;
 
 import fun.baozi.core.domain.page.PageBean;
-import fun.baozi.data.domain.UserList;
+import fun.baozi.web.data.dto.UserList;
 import fun.baozi.web.domain.modals.UserRegister;
 import fun.baozi.web.web.res.ListUserRs;
 import fun.baozi.web.web.res.RegisterUserRs;

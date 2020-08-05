@@ -1,4 +1,4 @@
-package fun.baozi.web.config;
+package fun.baozi.web.config.swagger;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

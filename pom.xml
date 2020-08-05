@@ -5,7 +5,6 @@
     <packaging>pom</packaging>
     <modules>
         <module>boilerplate-core</module>
-        <module>boilerplate-data</module>
         <module>boilerplate-web</module>
         <module>boilerplate-scheduled</module>
         <module>mapper-generator</module>
