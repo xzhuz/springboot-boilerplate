@@ -4,9 +4,8 @@
     <modelVersion>4.0.0</modelVersion>
     <packaging>pom</packaging>
     <modules>
-        <module>boilerplate-core</module>
-        <module>boilerplate-web</module>
-        <module>boilerplate-scheduled</module>
+        <module>core</module>
+        <module>web</module>
         <module>mapper-generator</module>
     </modules>
 
