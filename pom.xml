@@ -6,6 +6,9 @@
     <modules>
         <module>core</module>
         <module>web</module>
+        <module>with-logback</module>
+        <module>with-mysql</module>
+        <module>with-swagger</module>
         <module>mapper-generator</module>
     </modules>
 
